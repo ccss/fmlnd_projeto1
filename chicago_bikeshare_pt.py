@@ -57,7 +57,10 @@ input("Aperte Enter para continuar...")
 def column_to_list(data, index):
     column_list = []
     # Dica: Você pode usar um for para iterar sobre as amostras, pegar a feature pelo seu índice, e dar append para uma lista
+    for amostra in data:
+        column_list.append(amostra[index])
     return column_list
+
 
 
 # Vamos checar com os gêneros se isso está funcionando (apenas para os primeiros 20)
