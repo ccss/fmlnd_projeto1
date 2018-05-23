@@ -80,6 +80,13 @@ input("Aperte Enter para continuar...")
 male = 0
 female = 0
 
+generos = column_to_list(data_list, -2)
+
+for genero in generos:
+    if genero.lower() == "male":
+        male += 1
+    elif genero.lower() == "female":
+        female += 1
 
 # Verificando o resultado
 print("\nTAREFA 4: Imprimindo quantos masculinos e femininos nós encontramos")
