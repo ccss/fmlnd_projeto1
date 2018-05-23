@@ -169,6 +169,34 @@ input("Aperte Enter para continuar...")
 print("\nTAREFA 7: Verifique o gráfico!")
 
 
+def count_user_types(user_types):
+    subscriber = 0
+    customer = 0
+    other = 0
+    for i in user_types:
+        
+        if str(i).lower() == "subscriber":
+            subscriber += 1
+        elif str(i).lower() == "customer":
+            customer += 1
+        else:
+            other += 1
+    
+    return [subscriber, customer, other]
+
+user_types = column_to_list(data_list, -3)
+print(user_types[0:20])
+
+quantidade = count_user_types(user_types)
+types = ["Subscriber", "Customer", "Other"]
+y_pos = list(range(len(types)))
+plt.bar(y_pos, quantidade)
+plt.ylabel("Quantidade")
+plt.xlabel("User type")
+plt.xticks(y_pos, types)
+plt.title("Quantidade por user type")
+plt.show(block=True)
+
 input("Aperte Enter para continuar...")
 # TAREFA 8
 # TODO: Responda a seguinte questão
