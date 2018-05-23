@@ -131,6 +131,15 @@ input("Aperte Enter para continuar...")
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 def most_popular_gender(data_list):
     answer = ""
+
+    contagem_genero = count_gender(data_list)
+    if int(contagem_genero[0]) == int(contagem_genero[1]):
+        answer = "Igual"
+    elif int(contagem_genero[0]) > int(contagem_genero[1]):
+        answer = "Masculino"
+    elif int(contagem_genero[0]) < int(contagem_genero[1]):
+        answer = "Feminino"
+
     return answer
 
 
