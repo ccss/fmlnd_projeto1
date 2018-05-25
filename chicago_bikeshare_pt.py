@@ -267,7 +267,7 @@ input("Aperte Enter para continuar...")
 # TAREFA 10
 # Gênero é fácil porque nós temos apenas algumas opções. E quanto a start_stations? Quantas opções ele tem?
 # TODO: Verifique quantos tipos de start_stations nós temos, usando set()
-user_types = set()
+user_types = set(column_to_list(data_list, 3))
 
 print("\nTAREFA 10: Imprimindo as start stations:")
 print(len(user_types))
@@ -296,11 +296,18 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para contar tipos de usuários, sem definir os tipos
 # para que nós possamos usar essa função com outra categoria de dados.
 print("Você vai encarar o desafio? (yes ou no)")
-answer = "no"
+answer = "yes"
 
 def count_items(column_list):
     item_types = []
     count_items = []
+    for i in column_list:
+        if i not in item_types:
+            item_types.append(i)
+            count_items.append(1)
+        else:
+            #count_itemsappend(count_items[0]+1)
+            count_items[0] = count_items[0] + 1
     return item_types, count_items
 
 
